@@ -6,7 +6,7 @@ COPY main.ts main.ts
 
 RUN deno compile -o deno-app main.ts
 
-FROM scratch
+FROM gcr.io/distroless/cc
 
 COPY --from=build /opt/app/deno-app /opt/app/deno-app
 
